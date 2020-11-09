@@ -1,0 +1,20 @@
+[
+  {
+    "symbol": "APPLE",
+    "quantity": 100,
+    "tradeType": "BUY",
+    "purchaseDate": "2019-01-02"
+  },
+  {
+    "symbol": "MICROSOFT",
+    "quantity": 10,
+    "tradeType": "BUY",
+    "purchaseDate": "2019-01-02"
+  },
+  {
+    "symbol": "GOOGLE",
+    "quantity": 50,
+    "tradeType": "BUY",
+    "purchaseDate": "2019-01-02"
+  }
+]
