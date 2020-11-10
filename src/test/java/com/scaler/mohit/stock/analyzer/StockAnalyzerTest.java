@@ -4,6 +4,8 @@ import com.scaler.mohit.stock.analyzer.pojo.AnnualizedReturn;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,7 +17,7 @@ public class StockAnalyzerTest {
 
     // Part 1
     @Test
-    public void readStocksFromFileTest() {
+    public void readStocksFromFileTest() throws IOException, URISyntaxException {
         List<String> expected = Arrays.asList("AAPL", "MSFT", "GOOGL");
         List<String> actual = StockAnalyzer.readStocksFromFile("trades.json");
         Assert.assertEquals(expected, actual);
@@ -23,14 +25,14 @@ public class StockAnalyzerTest {
 
     // Part 2
     @Test
-    public void getStockSymbolsInAscPriceTest() {
-        List<String> expected = Arrays.asList("GOOGL", "AAPL", "MSFT");
+    public void getStockSymbolsInAscPriceTest() throws IOException, URISyntaxException {
+        List<String> expected = Arrays.asList("MSFT", "AAPL", "GOOGL");
         List<String> actual = StockAnalyzer.getStockSymbolsInAscPrice("trades.json", "2019-12-12");
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void getStockSymbolsInAscPriceTest_EmptyFile() {
+    public void getStockSymbolsInAscPriceTest_EmptyFile() throws IOException, URISyntaxException {
         List<String> expected = Arrays.asList();
         List<String> actual = StockAnalyzer.getStockSymbolsInAscPrice("trades_empty.json", "2019-12-12");
         Assert.assertEquals(expected, actual);
