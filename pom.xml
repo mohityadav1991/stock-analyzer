@@ -6,7 +6,7 @@
 
     <groupId>com.scaler.mohit</groupId>
     <artifactId>stock-analyzer</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <build>
         <plugins>
             <plugin>
@@ -36,11 +36,6 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.11.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>5.3.1</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>

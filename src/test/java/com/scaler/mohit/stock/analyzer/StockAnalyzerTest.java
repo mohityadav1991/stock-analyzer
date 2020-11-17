@@ -1,6 +1,6 @@
 package com.scaler.mohit.stock.analyzer;
 
-import com.scaler.mohit.stock.analyzer.pojo.AnnualizedReturn;
+import com.scaler.mohit.stock.analyzer.model.AnnualizedReturn;
 import org.junit.Assert;
 import org.junit.Test;
 

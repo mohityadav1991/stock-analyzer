@@ -2,10 +2,10 @@ package com.scaler.mohit.stock.analyzer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.scaler.mohit.stock.analyzer.pojo.AnnualizedReturn;
-import com.scaler.mohit.stock.analyzer.pojo.Candle;
-import com.scaler.mohit.stock.analyzer.pojo.TiingoCandle;
-import com.scaler.mohit.stock.analyzer.pojo.Trade;
+import com.scaler.mohit.stock.analyzer.model.AnnualizedReturn;
+import com.scaler.mohit.stock.analyzer.model.Candle;
+import com.scaler.mohit.stock.analyzer.model.TiingoCandle;
+import com.scaler.mohit.stock.analyzer.model.Trade;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.File;
@@ -30,7 +30,7 @@ public class StockAnalyzer {
      *  3. calculateAnnualizedReturns => BL layer
      *  4. Interface to fetchPrice
      *  5. Factory Pattern to fetch actual implementation
-     *  6. Dependency Injection
+     *  6. Dependency Injection : Implement
      */
 
     private static final ObjectMapper MAPPER = new ObjectMapper().registerModule(new JavaTimeModule());
@@ -109,7 +109,7 @@ public class StockAnalyzer {
             String url = String.format("https://api.tiingo.com/tiingo/daily/%s/prices"
                             + "?startDate=%s&endDate=%s&token=03d1619c795c3287bc7c27db671ac4264f3b5410&",
                     portfolioTrade.getSymbol(), date.toString(), date.toString());
-            Candle[] candles = REST_TEMPLATE.getForObject(url, Candle[].class);
+            Candle[] candles = REST_TEMPLATE.getForObject(url, TiingoCandle[].class);
             if (candles != null && candles.length > 0) {
                 candle = candles[0];
             }

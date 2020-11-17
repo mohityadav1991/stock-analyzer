@@ -1,4 +1,4 @@
-package com.scaler.mohit.stock.analyzer.pojo;
+package com.scaler.mohit.stock.analyzer.model;
 
 import java.time.LocalDate;
 
